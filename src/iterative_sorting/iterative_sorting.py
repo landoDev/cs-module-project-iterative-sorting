@@ -13,9 +13,6 @@ def selection_sort(arr):
             if arr[unsorted] < arr[smallest_index]:
                 # set smallest to that element
                 smallest_index = unsorted
-
-
-
         # TO-DO: swap
         # Your code here
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
@@ -28,10 +25,35 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+    # set the master length
+    end_list = len(arr)
+    # Loop through the list 
+    for item in range(end_list - 1):
+        # for each item, check the value of the next index 
+        for compared in range(0, end_list - item - 1):
+            # if the value on the right is higher, switch them  
+            if arr[compared] > arr[compared +1]:
+                arr[compared], arr[compared +1] = arr[compared + 1], arr[compared]
+
+    # Question: I track how this works but I can't nail down how this actually ever leaves this loop. Is it because the nested for loop happens at each element so it runs through the list starting from index 0? what if there was a lower number in the back? Update, the - item in the for loop resets where the end of the list has something to do with it.
+
+    # first attempt had the right idea, but didn't use the master for loop
+    # loop over array
+    # while True:
+    #     end_list = len(arr)
+    #     # initialize original index
+    #     for item in range(0, end_list -1):
+    #         next_item = arr[item +1]
+    #         if item > next_item:
+    #             arr[next_item], arr[item] = arr[item], arr[next_item]
+    #             end_list -= 1
+
+
 
 
     return arr
 
+print(bubble_sort([12,45,35,2,5,7,8]))
 '''
 STRETCH: implement the Counting Sort function below
 
