@@ -7,10 +7,20 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
+        # for each element after this one:
+        for unsorted in range(cur_index, len(arr)):
+            # if that element is less than the smallest
+            if arr[unsorted] < arr[smallest_index]:
+                # set smallest to that element
+                smallest_index = unsorted
+
 
 
         # TO-DO: swap
         # Your code here
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+        # put smallest in the first unsorted position
+
 
     return arr
 
